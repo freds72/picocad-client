@@ -36,6 +36,10 @@ Many points are left to the reader:
 - Change game logic/structure to fit your game!
 - Good luck
 
+## Credits
+
+Sort by [Morgan McGuire](https://github.com/morgan3d/misc/tree/master/p8sort)
+
 ## Licence
 
 Sample code is licenced under: [Creative Commons Attribution 4.0 International Public License](https://creativecommons.org/licenses/by/4.0/legalcode)
