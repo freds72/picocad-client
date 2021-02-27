@@ -38,6 +38,7 @@ Many points are left to the reader:
 
 ## Credits
 
+Tank model by [Johan Peitz](https://twitter.com/johanpeitz)
 Sort by [Morgan McGuire](https://github.com/morgan3d/misc/tree/master/p8sort)
 
 ## Licence
