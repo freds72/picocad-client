@@ -280,7 +280,9 @@ function make_cam()
       for _,poly in ipairs(polys) do
         --
         local face=poly.face
-        local light=mid(-v_dot(sun,face.n),-1,1)
+        local light=mid(-v_dot(sun,face.n),0.0,1)
+        -- TY - adjust lighting - overbrighten to preserve original colours, clamp the end result to min 0.2 to avoid crushing anything to black
+        light = min( (light * light) * 8 + 0.2, 1 )
         if light>0 then
           pal(_dithers[flr(12*(1-light))],2)
 
