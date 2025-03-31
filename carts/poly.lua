@@ -28,11 +28,11 @@ function polyfill(v,c)
 end
 
 function polyline(v,c)
-	color(c)
-	local nv=#v
-	for i,p1 in next,v do
-		local p0=v[i%nv+1]
-		line(p0.x,p0.y,p1.x,p1.y)
+	line(c)
+	local pn=v[#v]
+	line(pn.x,pn.y)
+	for i,p1 in inext,v do
+		line(p1.x,p1.y)
 	end
 end
 
