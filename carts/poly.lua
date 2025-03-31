@@ -1,11 +1,10 @@
-function polyfill(v,c)	
+function polyfill(v,c)
 	if(#v<3) return
 	color(c)
 	local p0,spans=v[#v],{}
 	local x0,y0=p0.x,p0.y
-	-- ipairs is slower for small arrays
-	for i=1,#v do
-		local p1=v[i]
+	-- https://www.lexaloffle.com/bbs/?tid=148143
+	for i,p1 in inext,v do
 		local x1,y1=p1.x,p1.y
 		local _x1,_y1,_v1=x1,y1
 		if(y0>y1) x0,y0,x1,y1=x1,y1,x0,y0
@@ -31,7 +30,7 @@ end
 function polyline(v,c)
 	color(c)
 	local nv=#v
-	for i,p1 in pairs(v) do
+	for i,p1 in next,v do
 		local p0=v[i%nv+1]
 		line(p0.x,p0.y,p1.x,p1.y)
 	end
@@ -41,9 +40,8 @@ function tpoly(v,uv)
 	local p0,spans=v[#v],{}
 	local x0,y0=p0.x,p0.y
 	local u0,v0=uv[#uv-1],uv[#uv]
-	-- ipairs is slower for small arrays
-	for i=1,#v do
-		local p1=v[i]
+	-- https://www.lexaloffle.com/bbs/?tid=148143
+	for i,p1 in inext,v do
 		local x1,y1=p1.x,p1.y
 		local u1,v1=uv[2*i-1],uv[2*i]
 		local _x1,_y1,_u1,_v1=x1,y1,u1,v1
