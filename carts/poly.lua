@@ -61,7 +61,8 @@ function tpoly(v,uv)
 			if span then
 				--rectfill(x[1],y,x0,y,offset/16)
 				
-				local a,au,av,b,bu,bv=x0,u0,v0,unpack(span)
+				-- unpack(span) here is -6 tokens and +11 cycles/loop
+				local a,au,av,b,bu,bv=x0,u0,v0,span[1],span[2],span[3]
 				if(a>b) a,au,av,b,bu,bv=b,bu,bv,a,au,av
 				local ca,cb=a\1+1,b\1
 				if ca<=cb then
